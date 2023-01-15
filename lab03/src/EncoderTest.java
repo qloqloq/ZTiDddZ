@@ -23,7 +23,7 @@ public class EncoderTest {
     }
 
     @Test
-    public void shouldDecodePhrase_WhenValidInput() {
+    public void shouldDecodePhrase() {
         String encodedPhrase = "UEBzc3dvcmQxMjMh";
         String decodedPhrase = "P@ssword123!";
 
