@@ -1,3 +1,5 @@
+import java.util.Base64;
+
 public class EncoderDemo {
 
     public static void main(String[] args) {
@@ -11,5 +13,23 @@ public class EncoderDemo {
         System.out.println("Encoded password: " + encodedPassword);
         System.out.println("Decoded password: " + decodedPassword);
 
+    }
+}
+
+class Encoder {
+
+    public String encode(String txt) {
+        validateInput(txt);
+        return Base64.getEncoder().encodeToString(txt.getBytes());
+    }
+
+    public String decode(String encodedTxt) {
+        validateInput(encodedTxt);
+        return new String(Base64.getDecoder().decode(encodedTxt));
+    }
+
+    private void validateInput(String txt) {
+        if (txt == null)
+            throw new RuntimeException("Input must not be null");
     }
 }
